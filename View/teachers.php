@@ -11,6 +11,27 @@
 <?php require 'includes/header.php' ?>
 
 
+<section>
+    <table class="table table-striped table-dark">
+        <thead>
+        <tr>
+            <th scope="col"><div class="padding">Name</div></th>
+            <th scope="col">Email</th>
+            <th scope="col">teacherID</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($allTeachers as $teacher) {
+
+            echo '<td>' . $teacher['teacherName'] . '</td>';
+            echo '<td>' . $teacher['teacherEmail'] . '</td>';
+            echo '<td>' . $teacher['teacherID'] . '</td>';
+            echo '</tr>';
+        } ?>
+        </tbody>
+    </table>
+</section>
+
 
 <section>
     <!--        <h4>Hello --><?php //echo $user->getName()?><!--,</h4>-->

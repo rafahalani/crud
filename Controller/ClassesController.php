@@ -8,7 +8,7 @@ class ClassesController
      $database = new Connection();
      $pdo = $database->Connect();
      $allClasses = $database->select($pdo,'SELECT Class.className, Class.classID, Class.Location FROM Class');
-     var_dump($allClasses);
+    // var_dump($allClasses);
      require './View/classes.php';
     }
 }

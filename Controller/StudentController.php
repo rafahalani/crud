@@ -9,7 +9,7 @@ class StudentController
         $pdo = $database->Connect();
         $allStudents = $database->select($pdo, 'SELECT Student.studentName, Student.studentID, Student.studentEmail FROM Student');
         //$allStudents = $database->select($pdo, 'SELECT * FROM Student');
-        var_dump($allStudents);
+      //  var_dump($allStudents);
         require './View/student.php';
     }
 }
