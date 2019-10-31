@@ -11,7 +11,26 @@
 <?php require 'includes/header.php' ?>
 
 
+<table class="table table-striped table-dark">
+    <thead>
+    <tr>
 
+        <th scope="col"><div class="padding">Name</div></th>
+        <th scope="col">Email</th>
+        <th scope="col">Class</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($allStudents as  $student) {
+
+        echo '<td>'.$student['studentName'].'</td>';
+        echo '<td>'.$student['studentEmail'].'</td>';
+        echo '<td>'.$student['studentID'].'</td>';
+        echo '</tr>';
+    } ?>
+    </tbody>
+</table>
+</section>
 <section>
     <!--        <h4>Hello --><?php //echo $user->getName()?><!--,</h4>-->
     <p>Put your students here.</p>

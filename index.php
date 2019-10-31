@@ -29,3 +29,6 @@ if (isset($_GET['view'])){
 }
 
 $controller->render($_GET, $_POST);
+
+
+
