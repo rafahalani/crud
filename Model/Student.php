@@ -4,31 +4,43 @@ declare(strict_types=1);
 class Student
 {
     private $studentID;
-    private $name;
-    private $class;
-    private $email;
+    private $studentName;
+   // private $class;
+    private $studentEmail;
 
-    public function __construct(string $name, string $email, int $class, int $studentID)
+    /**
+     * Student constructor.
+     */
+    public function __construct(string $studentName, string $studentEmail,int $studentID)
     {
-        $this->name = $name;
-        $this->class = $class;
-        $this->email = $email;
+        $this->studentName = $studentName;
+        $this->studentEmail = $studentEmail;
         $this->studentID = $studentID;
+
     }
 
-    public function getName() : string
+    /**
+     * @return int
+     */
+    public function getStudentID(): int
     {
-        return $this->name;
+        return $this->studentID;
     }
 
-    public function getEmail() : string
+    /**
+     * @return string
+     */
+    public function getStudentName(): string
     {
-        return $this->email;
+        return $this->studentName;
     }
 
-    public function getClass() : int
+    /**
+     * @return string
+     */
+    public function getStudentEmail(): string
     {
-        return $this->class;
+        return $this->studentEmail;
     }
 
 

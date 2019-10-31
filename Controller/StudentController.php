@@ -3,13 +3,28 @@ declare(strict_types=1);
 
 class StudentController
 {
-    public function render(array $GET, array $POST) : void
+    public function render(array $GET, array $POST): void
     {
         $database = new Connection();
         $pdo = $database->Connect();
-        $allStudents = $database->select($pdo, 'SELECT Student.studentName, Student.studentID, Student.studentEmail FROM Student');
+        $dataStudents = $database->select($pdo, 'SELECT Student.studentName, Student.studentID, Student.studentEmail FROM Student');
         //$allStudents = $database->select($pdo, 'SELECT * FROM Student');
-      //  var_dump($allStudents);
-        require './View/student.php';
+        $allStudents = $this->loader($dataStudents);
+        //  var_dump($allStudents);
+        var_dump($allStudents);
+       require 'View/student.php';
+    }
+
+
+    public function loader($Students): array
+    {
+        $listOfStudents = [];
+
+
+        foreach ($Students AS $student)
+        {
+        $listOfStudents[] = new Student($student['studentName'], $student['studentEmail'], $student['studentID']);
+        }
+        return $listOfStudents;
     }
 }

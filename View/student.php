@@ -29,9 +29,9 @@
             <tbody>
             <?php foreach ($allStudents as $student) {
 
-                echo '<td>' . $student['studentName'] . '</td>';
-                echo '<td>' . $student['studentEmail'] . '</td>';
-                echo '<td>' . $student['studentID'] . '</td>';
+                echo '<td>' . $student->getstudentName() . '</td>';
+                echo '<td>' . $student->getstudentEmail() . '</td>';
+                echo '<td>' . $student->getstudentID() . '</td>';
                 echo '<td>' . '<input class="btn btn-danger" type="submit" name="view" value="delete">' . '</td>';
                 echo '<td>' . '<input class="btn btn-info" type="submit" name="view" value="add">' . '</td>';
                 echo '</tr>';
