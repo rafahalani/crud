@@ -12,6 +12,7 @@
     <form method="get">
         <input type="submit" name="view" value="students">
         <input type="submit" name="view" value="teachers">
+        <input type="submit" name="view" value="classes">
     </form>
 
 
