@@ -29,6 +29,8 @@
             echo '<td>' . $teacher['teacherName'] . '</td>';
             echo '<td>' . $teacher['teacherEmail'] . '</td>';
             echo '<td>' . $teacher['teacherID'] . '</td>';
+            echo '<td>' . '<input class="btn btn-danger" type="submit" name="view" value="delete">' . '</td>';
+            echo '<td>' . '<input class="btn btn-info" type="submit" name="view" value="add">' . '</td>';
             echo '</tr>';
         } ?>
         </tbody>

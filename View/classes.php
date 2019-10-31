@@ -27,6 +27,8 @@
             echo '<td>' . $class['className'] . '</td>';
             echo '<td>' . $class['classID'] . '</td>';
             echo '<td>' . $class['Location'] . '</td>';
+            echo '<td>' . '<input class="btn btn-danger" type="submit" name="view" value="delete">' . '</td>';
+            echo '<td>' . '<input class="btn btn-info" type="submit" name="view" value="add">' . '</td>';
             echo '</tr>';
         } ?>
         </tbody>

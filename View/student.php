@@ -32,6 +32,8 @@
                 echo '<td>' . $student['studentName'] . '</td>';
                 echo '<td>' . $student['studentEmail'] . '</td>';
                 echo '<td>' . $student['studentID'] . '</td>';
+                echo '<td>' . '<input class="btn btn-danger" type="submit" name="view" value="delete">' . '</td>';
+                echo '<td>' . '<input class="btn btn-info" type="submit" name="view" value="add">' . '</td>';
                 echo '</tr>';
             } ?>
             </tbody>
