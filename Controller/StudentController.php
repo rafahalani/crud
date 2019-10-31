@@ -11,7 +11,7 @@ class StudentController
         //$allStudents = $database->select($pdo, 'SELECT * FROM Student');
         $allStudents = $this->loader($dataStudents);
         //  var_dump($allStudents);
-        var_dump($allStudents);
+
        require 'View/student.php';
     }
 

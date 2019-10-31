@@ -33,17 +33,30 @@
                 echo '<td>' . $student->getstudentEmail() . '</td>';
                 echo '<td>' . $student->getstudentID() . '</td>';
                 echo '<td>' . '<input class="btn btn-danger" type="submit" name="view" value="delete">' . '</td>';
-                echo '<td>' . '<input class="btn btn-info" type="submit" name="view" value="add">' . '</td>';
+                echo '<td>' . '<input class="btn btn-info" type="submit" name="view" value="edit">' . '</td>';
                 echo '</tr>';
             } ?>
             </tbody>
         </table>
     </section>
 </div>
-<section>
-    <!--        <h4>Hello --><?php //echo $user->getName()?><!--,</h4>-->
-    <p>Put your students here.</p>
-</section>
+
+<?php
+if (isset($_GET['form'])){
+if ($_GET['form'] === 'Add') {
+
+}
+}
+?>
+
+<div class="container">
+    <section>
+
+        <input class="btn btn-primary" type="submit" name="form" value="Add">
+    </section>
+</div>
+
+
 <?php require 'includes/footer.php' ?>
 </body>
 </html>
