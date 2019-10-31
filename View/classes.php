@@ -10,6 +10,28 @@
 <body>
 <?php require 'includes/header.php' ?>
 
+<section>
+    <table class="table table-striped table-dark">
+        <thead>
+        <tr>
+            <th scope="col">
+                <div class="padding">Name</div>
+            </th>
+            <th scope="col">ID</th>
+            <th scope="col">Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($allClasses as $class) {
+
+            echo '<td>' . $class['className'] . '</td>';
+            echo '<td>' . $class['classID'] . '</td>';
+            echo '<td>' . $class['Location'] . '</td>';
+            echo '</tr>';
+        } ?>
+        </tbody>
+    </table>
+</section>
 
 
 <section>

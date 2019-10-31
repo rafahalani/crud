@@ -10,7 +10,7 @@
 <body>
 <?php require 'includes/header.php' ?>
 
-
+<section>
 <table class="table table-striped table-dark">
     <thead>
     <tr>
