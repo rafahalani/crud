@@ -3,25 +3,26 @@
 
 class Connection
 {
-    private $_host = 'localhost';
-    private $_username = 'Rafah';
-    private $_password = 'Wachtwoord123';
-    private $_database = 'crud';
+    public function Connect (){
+        $dbhost = 'localhost';
+        $dbuser = 'Rafah';
+        $dbpass = 'Wachtwoord123';
+        $db = 'crud';
+        $pdo = new PDO('mysql:host='. $dbhost .';dbname='. $db, $dbuser, $dbpass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        return $pdo;
+    }
 
-    protected $connection;
-
-    public function __construct()
+    public function select(PDO $pdo, string $query) : array
     {
-        if (!isset($this->connection)) {
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
-            $this->connection = new pdo($this->_host, $this->_username, $this->_password, $this->_database);
+    public function insertNewStudent()
+    {
 
-            if (!$this->connection) {
-                echo 'Cannot connect to database server';
-                exit;
-            }
-        }
-
-        return $this->connection;
     }
 }
