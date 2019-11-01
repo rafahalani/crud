@@ -13,6 +13,7 @@ require 'Controller/HomepageController.php';
 require 'Controller/StudentController.php';
 require 'Controller/TeacherController.php';
 require 'Controller/ClassesController.php';
+require 'Controller/AddController.php';
 
 
 //you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
@@ -30,6 +31,8 @@ if (isset($_GET['view'])){
 }
 
 $controller->render($_GET, $_POST);
+
+
 
 
 

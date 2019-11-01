@@ -41,20 +41,16 @@
     </section>
 </div>
 
-<?php
-if (isset($_GET['form'])){
-if ($_GET['form'] === 'Add') {
-
-}
-}
-?>
-
 <div class="container">
     <section>
-
-        <input class="btn btn-primary" type="submit" name="form" value="Add">
+        <form action="View/studentform.php" method="get">
+            <input class="btn btn-primary" type="submit" name="add" value="add">
+        </form>
     </section>
 </div>
+
+
+
 
 
 <?php require 'includes/footer.php' ?>
