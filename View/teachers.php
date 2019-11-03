@@ -14,34 +14,38 @@
 <?php require 'includes/header.php' ?>
 
 <div class="container">
-<section>
-    <table class="table table-striped table-dark">
-        <thead>
-        <tr>
-            <th scope="col"><div class="padding">Name</div></th>
-            <th scope="col">Email</th>
-            <th scope="col">teacherID</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($allTeachers as $teacher) {
+    <section>
+        <table class="table table-striped table-dark">
+            <thead>
+            <tr>
+                <th scope="col">
+                    <div class="padding">Name</div>
+                </th>
+                <th scope="col">Email</th>
+                <th scope="col">teacherID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($allTeachers as $teacher) {
 
-            echo '<td>' . $teacher['teacherName'] . '</td>';
-            echo '<td>' . $teacher['teacherEmail'] . '</td>';
-            echo '<td>' . $teacher['teacherID'] . '</td>';
-            echo '<td>' . '<input class="btn btn-danger" type="submit" name="view" value="delete">' . '</td>';
-            echo '<td>' . '<input class="btn btn-info" type="submit" name="view" value="add">' . '</td>';
-            echo '</tr>';
-        } ?>
-        </tbody>
-    </table>
-</section>
+                echo '<td>' . $teacher->getteacherName() . '</td>';
+                echo '<td>' . $teacher->getteacherEmail() . '</td>';
+                echo '<td>' . $teacher->getteacherID() . '</td>';
+                echo '<td>' . '<input class="btn btn-danger" type="submit" name="view" value="delete">' . '</td>';
+                echo '<td>' . '<input class="btn btn-info" type="submit" name="view" value="add">' . '</td>';
+                echo '</tr>';
+            } ?>
+            </tbody>
+        </table>
+    </section>
 </div>
-
-<section>
-    <!--        <h4>Hello --><?php //echo $user->getName()?><!--,</h4>-->
-    <p>Put your teachers here.</p>
-</section>
+<div class="container">
+    <section>
+        <form action="View/teacherform.php" method="get">
+            <input class="btn btn-primary" type="submit" name="add" value="add">
+        </form>
+    </section>
+</div>
 <?php require 'includes/footer.php' ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>

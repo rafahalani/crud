@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 //include all your model files here
 require 'Model/Connection.php';
 require 'Model/Student.php';
+require 'Model/Teacher.php';
 
 //include all your controllers here
 require 'Controller/HomepageController.php';
