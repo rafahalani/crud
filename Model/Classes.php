@@ -7,14 +7,13 @@ class Classes
 
     private $classID;
     private $className;
-    private $teacherID;
+
     private $Location;
 
 
-    public function __construct(string $className, string $Location, int $teacherID, int $classID)
+    public function __construct(string $className, string $Location, int $classID)
     {
         $this->className = $className;
-        $this->teacherID = $teacherID;
         $this->Location = $Location;
         $this->classID = $classID;
     }
@@ -24,11 +23,6 @@ class Classes
         return $this->className;
     }
 
-
-    public function getteacherID(): int
-    {
-        return $this->teacherID;
-    }
 
     public function getLocation(): string
     {

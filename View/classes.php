@@ -24,9 +24,9 @@
         <tbody>
         <?php foreach ($allClasses as $class) {
 
-            echo '<td>' . $class['className'] . '</td>';
-            echo '<td>' . $class['classID'] . '</td>';
-            echo '<td>' . $class['Location'] . '</td>';
+            echo '<td>' . $class->getclassName() . '</td>';
+            echo '<td>' . $class->getLocation() . '</td>';
+            echo '<td>' . $class->getclassID() . '</td>';
             echo '<td>' . '<input class="btn btn-danger" type="submit" name="view" value="delete">' . '</td>';
             echo '<td>' . '<input class="btn btn-info" type="submit" name="view" value="add">' . '</td>';
             echo '</tr>';
@@ -36,10 +36,13 @@
 </section>
 
 </div>
-<section>
-    <!--        <h4>Hello --><?php //echo $user->getName()?><!--,</h4>-->
-    <p>Put your Classes here.</p>
-</section>
+<div class="container">
+    <section>
+        <form action="View/classform.php" method="get">
+            <input class="btn btn-primary" type="submit" name="add" value="add">
+        </form>
+    </section>
+</div>
 <?php require 'includes/footer.php' ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
