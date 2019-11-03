@@ -1,10 +1,7 @@
 <?php
 declare(strict_types=1);
-
-
 class AddController
 {
-
     public function render(array $GET, array $POST): void
     {
         $database = new Connection();
@@ -13,10 +10,8 @@ class AddController
         //$allStudents = $database->select($pdo, 'SELECT * FROM Student');
         $allStudents = $this->loader($dataStudents);
         //  var_dump($allStudents);
-
-        require 'View/studentform.php.php';
+        require 'View/studentform.php';
     }
-
     public function createNewStudent(array $POST, Connection $database, PDO $pdo): void
     {
         $newStudent = new Student($POST['studentName'], $POST['studentEmail'], $POST['studentID']);

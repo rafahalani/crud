@@ -4,24 +4,6 @@ ini_set('display_errors', "1");
 ini_set('display_startup_errors', "1");
 error_reporting(E_ALL);
 //require 'connection.php';
-
-if(!isset($_GET)){
-    if ($_SERVER['REQUEST_METHOD'] === 'GET'){
-        $studentName = $_GET['studnetName'];
-        $studentEmail = $_GET['studnetEmail'];
-        $studentID= $_GET['studnetID'];
-
-$connect = new StudentController();
-$connection = $connect->render();
-        try{
-            $prepare = $connection->prepare('INSERT INTO Student(studentName, studentEmail, studentID) VALUES (:studentName, :studentEmail, studentID)');
-            $var = $prepare->excute([$studentName,$studentEmail,$studentID]);
-        } catch (\PDOException $e) {
-            throw new \PDOException($e->getMessage(), (string)$e->getCode());
-        }
-
-    }
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -41,26 +23,26 @@ $connection = $connect->render();
 </head>
 <body>
 <div class="container">
-<div class="m-5 bg-light">
-    <h3>Please enter the new student</h3>
-    <form action="" method="get">
+    <div class="m-5 bg-light">
+        <h3>Please enter the new student</h3>
+        <form action="" method="get">
 
-        </br>
-        <label for="studentName">studentName:</label>
-        <input name="studentName" id="studentName" type="text" maxlength="255" required/></br>
+            </br>
+            <label for="studentName">studentName:</label>
+            <input name="studentName" id="studentName" type="text" maxlength="255" required/></br>
 
-        </br>
-        <label for="studentEmail">studentEmail:</label>
-        <input name="studentEmail" id="studentEmail" type="text" maxlength="255" required/></br>
+            </br>
+            <label for="studentEmail">studentEmail:</label>
+            <input name="studentEmail" id="studentEmail" type="text" maxlength="255" required/></br>
 
-        </br>
-        <label for="studentID">studentID</label>
-        <input name="sudentID" id="studentID" type="text" maxlength="255" required/></br>
+            </br>
+            <label for="studentID">studentID</label>
+            <input name="sudentID" id="studentID" type="text" maxlength="255" required/></br>
 
-        </br>
-        <input class="btn btn-info" type="submit" value="submit"/></br>
-    </form>
-</div>
+            </br>
+            <input class="btn btn-info" type="submit" value="submit"/></br>
+        </form>
+    </div>
 </div>
 </body>
 </html>

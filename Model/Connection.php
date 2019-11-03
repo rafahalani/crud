@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 class Connection
 {
@@ -21,8 +21,11 @@ class Connection
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function insertNewStudent()
+    public function insertNewStudent(array $GET, Connection $database, PDO $pdo): void
     {
-
+        $newStudent = new Student($GET['studentName'], $GET['studentEmail'], $GET['studentID']);
+        $database->insertNewStudent($pdo, $newStudent);
+        require 'View/studentform.php';
+        require 'index.php';
     }
 }
